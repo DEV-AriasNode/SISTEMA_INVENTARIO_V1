@@ -3,7 +3,7 @@ package arraylist.sistema_inventario_dinamico.v1;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class ArrayListSistema_inventario_dinamicoV1 {
+public class InventarioProductos {
 
     public static Scanner sc;
     public static ArrayList<String> listaProducto = new ArrayList<>();
@@ -18,7 +18,7 @@ public class ArrayListSistema_inventario_dinamicoV1 {
         System.out.println("Ingrese 5 productos: ");
 
         for (int i = 0; i < 5; i++) {
-            System.out.println("Producto #" + (i + i) + ":");
+            System.out.println("Producto #" + (i + 1) + ":");
             String nombreProducto = sc.nextLine();
             listaProducto.add(nombreProducto);
 
@@ -45,7 +45,7 @@ public class ArrayListSistema_inventario_dinamicoV1 {
                     editarProducto();
                     break;
                 case 4:
-                    System.out.println("elimando productos...........");
+                    eliminarProducto();
                     break;
 
             }
@@ -92,6 +92,14 @@ public class ArrayListSistema_inventario_dinamicoV1 {
     }
 
     public static void eliminarProducto() {
-
+        System.out.println("que producto desea elimanar");
+        for(int i = 0; i<listaProducto.size(); i++){
+        System.out.println("" + i + "->" + listaProducto.get(i));
+        }
+        System.out.println("elija el producto que desea eliminar");
+        int opcionEliminar = sc.nextInt();
+        listaProducto.remove(opcionEliminar);
+       
+        
     }
 }
